@@ -3,10 +3,10 @@
 blue_color='\x1b[0;34m'
 reset_color='\x1b[0m'
 
-if [ $# -eq 1 ]; then
-  output=$1
-elif [ $# -gt 1 ]; then
-  echo "Sorry, I just need one file, but thanks."
+if [ $# -ge 1 ]; then
+  if [ ! $# -eq 1 ]; then
+    echo "Sorry, I just need one file, but thanks."
+  fi
   output=$1
 else
   output="$PWD/README.md"
