@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+function usage() {
+  echo "Usage:"
+  echo "  ~$ $0 <draft-file> <blog-root>"
+}
+
+if [ $# -lt 2 ]; then
+  usage
+  exit 1
+fi
+
+draft=$1
+project_root=$2
+publishing_date=`cat $1 | grep date | awk '{print $2}'`
+
+mv $draft $project_root/_posts/$publishing_date-$(basename $draft)
