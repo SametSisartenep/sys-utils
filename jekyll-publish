@@ -2,7 +2,7 @@
 
 function usage() {
   echo "Usage:"
-  echo "  ~$ $0 <draft-file> <blog-root>"
+  echo "  ~$ `basename $0` <draft-file> <blog-root>"
 }
 
 if [ $# -lt 2 ]; then

@@ -5,15 +5,20 @@ REMOTE=$2
 RFILE=$3
 
 function error() {
-  printf "Error: %s\n" $1
+  echo "Error: " $1
   exit 1
 }
 
 function usage() {
   echo "Usage: "
-  echo "~$ $0 <file> <remote-host> <remote-file> [port]"
+  echo "  ~$ `basename $0` <file> <remote-host> <remote-file> [port]"
   echo ""
 }
+
+if [ ! $# -ge 3 ];then
+  usage
+  error "Not enough arguments"
+fi
 
 if [ ! $PORT ];then
   if [ $4 ];then
