@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+blue_color='\x1b[0;34m'
+reset_color='\x1b[0m'
+
+license=$1
+output=$2
+
+printf "Copying to ${blue_color}%s${reset_color}...\n" $output
+cp $UTILS_PATH/templates/readmes/$license.md $output

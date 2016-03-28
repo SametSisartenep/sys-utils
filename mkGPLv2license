@@ -9,4 +9,4 @@ else
   output="$PWD/LICENSE"
 fi
 
-mkLicense CC0 $output
+mkLicense GPLv2 $output
