@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#
+# A tool to clone repositories from the AUR (Arch User Repository)
+#
+# It's a simple wrapper around Git, so the error handling (i.e, void
+# repositories, wrong paths, etc) is done by the VCS's CLI itself.
+#
+
+AURL='https://aur.archlinux.org/'
+
+git clone $AURL$1 $2
