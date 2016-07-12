@@ -18,9 +18,8 @@ if [ $# -ge 1 ]; then
   output=$1
 else
   case $progname in
-    *license) filetype='license'; output="$PWD/LICENSE" ;;
-    *readme) filetype='readme'; output="$PWD/Readme.md" ;;
-    *) filetype=''
+    *license) output="$PWD/LICENSE" ;;
+    *readme) output="$PWD/Readme.md" ;;
   esac
 fi
 
@@ -35,6 +34,12 @@ case $progname in
   mkApache2*) license='Apache2' ;;
   mkMozilla*) license='Mozilla' ;;
   *) license='CC0'
+esac
+
+case $progname in
+  *license) filetype='license'; ;;
+  *readme) filetype='readme'; ;;
+  *) filetype=''
 esac
 
 case $filetype in
