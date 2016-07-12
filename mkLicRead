@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+progname=$(basename $0)
+
 blue_color='\x1b[0;34m'
 reset_color='\x1b[0m'
 TEMPLATES=$UTILS_PATH/templates
@@ -18,27 +20,27 @@ else
   output="$PWD/LICENSE"
 fi
 
-case $0 in
+case $progname in
   mkCC0*) license='CC0' ;;
   mkGPLv2*) license='GPLv2' ;;
   mkGPLv3*) license='GPLv3' ;;
   mkLGPL*) license='LGPL' ;;
   mkMIT*) license='MIT' ;;
-  mk?(BSD|BSD-)2*) license='BSD-2' ;;
-  mk?(BSD|BSD-)3*) license='BSD-3' ;;
+  mkBSD2*) license='BSD-2' ;;
+  mkBSD3*) license='BSD-3' ;;
   mkApache2*) license='Apache2' ;;
   mkMozilla*) license='Mozilla' ;;
-  *) license='CC0' ;;
+  *) license='CC0'
 esac
 
-case $0 in
+case $progname in
   *license) filetype='license' ;;
   *readme) filetype='readme' ;;
-  *) filetype='' ;;
+  *) filetype=''
 esac
 
 case $filetype in
   license) copy ${TEMPLATES}/licenses/$license $output ;;
   readme) copy ${TEMPLATES}/readmes/$license.md $output ;;
-  *) echo "Didn't copy anything."; exit 1 ;;
+  *) echo "Didn't copy anything."; exit 1
 esac
