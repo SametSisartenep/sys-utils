@@ -1,12 +1,1 @@
-#!/usr/bin/env bash
-
-if [ $# -ge 1 ]; then
-  if [ ! $# -eq 1 ]; then
-    echo "I just need one file, but thanks."
-  fi
-  output=$1
-else
-  output="$PWD/LICENSE"
-fi
-
-mkLicense GPLv2 $output
+mkLicRead
