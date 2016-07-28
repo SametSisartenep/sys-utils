@@ -5,9 +5,8 @@ if [[ $# -ne 1 ]]; then
   echo "Usage: cfmt <file>"
 else
   astyle \
-    --style=bsd \
+    --style=linux \
     --lineend=linux \
-    --convert-tabs \
     --preserve-date \
     --pad-header \
     --indent-switches \
@@ -15,6 +14,7 @@ else
     --align-reference=name \
     --pad-oper \
     --suffix=none \
-    --indent=spaces=2 \
+    --indent=tab=8 \
+    --verbose \
     $1
 fi
