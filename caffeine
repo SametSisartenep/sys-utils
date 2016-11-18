@@ -1,0 +1,28 @@
+#!/bin/bash
+
+case $1 in
+	overdose)
+		echo -e "\nO  V  E  R  D  O  S  E" | lolcat
+		xset -dpms
+		xset s off
+		xautolock -disable
+		;;
+	dry)
+		echo -e "               \x1b[0;15m...\x1b[1;30mdry\x1b[0m"
+		xset +dpms
+		xset s on
+		xautolock -enable
+		;;
+	*)
+		echo -e "\t\t       /"
+		echo -e "\t\t    O /"
+		echo -e "\t\t    |/"
+		echo -e "\t\t   /|"
+		echo -e "\t\t   \\|       \x1b[0;35mJAGUAR TONIC\x1b[0m"
+		echo -e "\t\t    |"
+		echo -e "\t\t   / \\"
+		echo -e "\t\t  /   |"
+		echo -e "\t\t_/    |_"
+		exit 1
+		;;
+esac

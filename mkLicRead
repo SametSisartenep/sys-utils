@@ -19,7 +19,7 @@ if [ $# -ge 1 ]; then
 else
   case $progname in
     *license) output="$PWD/LICENSE" ;;
-    *readme) output="$PWD/Readme.md" ;;
+    *readme) output="$PWD/README.md" ;;
   esac
 fi
 

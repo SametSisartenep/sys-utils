@@ -9,12 +9,12 @@ else
     --lineend=linux \
     --preserve-date \
     --pad-header \
-    --indent-switches \
     --align-pointer=name \
     --align-reference=name \
     --pad-oper \
     --suffix=none \
     --indent=tab=8 \
+    --max-code-length=75 \
     --verbose \
     $1
 fi

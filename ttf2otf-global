@@ -39,9 +39,7 @@ echo " done.";
 # Find all OTF files we generated and move them to ~/.fonts/
 echo -n "Building user font directory... ";
 [[ ! -e ~/.fonts ]] && mkdir ~/.fonts;
-for f in $(find "$TMPDIR" -iname \*.otf); do
-  mv "$f" ~/.fonts/;
-done
+  mv $TMPDIR/*.otf ~/.fonts/;
 echo "done.";
 
 # Clean up
